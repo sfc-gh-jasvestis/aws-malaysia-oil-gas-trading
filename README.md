@@ -9,7 +9,6 @@ Malaysia is the world's 5th largest LNG exporter and home to the Tapis crude ben
 ```mermaid
 flowchart LR
     KIN[Kinesis] --> SPS[Snowpipe Streaming]
-    SP --> RAW[RAW Tables]
     SPS --> RAW
     RAW --> DT[Dynamic Tables]
     DT --> ML[ML Functions]
