@@ -8,7 +8,7 @@ USE SCHEMA APP;
 CREATE OR REPLACE NOTIFICATION INTEGRATION aws_malaysia_oil_gas_trading_EMAIL_INT
   TYPE = EMAIL
   ENABLED = TRUE
-  ALLOWED_RECIPIENTS = ('jonathan.asvestis@snowflake.com');
+  ALLOWED_RECIPIENTS = ('<YOUR_EMAIL>');
 
 -- Alert: LIMIT_BREACH_ALERT
 CREATE OR REPLACE ALERT APP.LIMIT_BREACH_ALERT
@@ -22,7 +22,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_malaysia_oil_gas_trading_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] Energy Trading & Risk Management: Position limit approaching breach threshold',
     'Position limit approaching breach threshold'
   );
@@ -41,7 +41,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_malaysia_oil_gas_trading_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] Energy Trading & Risk Management: VaR utilisation exceeding warning threshold',
     'VaR utilisation exceeding warning threshold'
   );
@@ -60,7 +60,7 @@ IF (EXISTS (
 THEN
   CALL SYSTEM$SEND_EMAIL(
     'aws_malaysia_oil_gas_trading_EMAIL_INT',
-    'jonathan.asvestis@snowflake.com',
+    '<YOUR_EMAIL>',
     '[ALERT] Energy Trading & Risk Management: Stop-loss trigger hit — escalate to Head of Trading',
     'Stop-loss trigger hit — escalate to Head of Trading'
   );
