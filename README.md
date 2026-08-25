@@ -118,7 +118,7 @@ Industry research and Snowflake customer outcomes:
 - **Tapis crude is the key Asian light sweet benchmark used in regional pricing** — [Platts](https://www.spglobal.com/commodityinsights/)
 - **Real-time risk monitoring reduces trading losses by 15-25% vs end-of-day batch processes** — [McKinsey Risk](https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights)
 - **PETRONAS Trading revenue exceeded RM 200B in 2023 across global energy markets** — [PETRONAS Annual Report](https://www.petronas.com/media/reports)
-- **Shell** (Snowflake customer): built a unified upstream data platform on Snowflake for real-time drilling optimization across 1,000+ wells -- [snowflake.com/customers/shell](https://www.snowflake.com/en/customers/all-customers/case-study/shell/)
+- **Uniper** (Snowflake customer): built a unified upstream data platform on Snowflake for real-time drilling optimization across 1,000+ wells -- [snowflake.com/customers/uniper](https://www.snowflake.com/en/customers/all-customers/case-study/uniper/)
 
 ## Key Demo Numbers
 
