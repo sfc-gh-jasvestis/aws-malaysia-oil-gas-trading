@@ -32,15 +32,22 @@ export default function HomePage() {
       .catch(() => {});
   }, []);
 
+
+  // KPI values come from /api/data, which reads CURATED.KPI_SUMMARY. The literal
+  // stays as a fallback so the card still renders if the API is unavailable.
+  const kpiVal = (title: string, fallback: string): string =>
+    (data?.kpiCards as { title: string; value: string }[] | undefined)
+      ?.find((k) => k.title === title)?.value ?? fallback;
+
   const title = narrative?.title || 'SEA AWS Demo';
 
   const executiveCockpit = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <KPICard title="Trading Revenue" value="RM 4.8B" status="neutral" />
-        <KPICard title="Avg Brent" value="$82/bbl" status="neutral" />
-        <KPICard title="Cargo Movements" value="124" status="neutral" />
-        <KPICard title="Open Positions" value="RM 847M" status="neutral" />
+        <KPICard title="Trading Revenue" value={kpiVal('Trading Revenue', 'RM 4.8B')} status="neutral" />
+        <KPICard title="Avg Brent" value={kpiVal('Avg Brent', '$82/bbl')} status="neutral" />
+        <KPICard title="Cargo Movements" value={kpiVal('Cargo Movements', '124')} status="neutral" />
+        <KPICard title="Open Positions" value={kpiVal('Open Positions', 'RM 847M')} status="neutral" />
       </div>
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <div className="lg:col-span-1">
@@ -87,9 +94,9 @@ export default function HomePage() {
   const domainTab1 = (
     <div className="space-y-6">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <KPICard title="Tapis Premium" value="+$2.40/bbl" />
-        <KPICard title="Storage Contango" value="$0.84/bbl" />
-        <KPICard title="Freight Rate" value="WS 84" />
+        <KPICard title="Tapis Premium" value={kpiVal('Tapis Premium', '+$2.40/bbl')} />
+        <KPICard title="Storage Contango" value={kpiVal('Storage Contango', '$0.84/bbl')} />
+        <KPICard title="Freight Rate" value={kpiVal('Freight Rate', 'WS 84')} />
       </div>
       <Chart
         data={data?.detail || [{ x: 'Mon', y: 24 }, { x: 'Tue', y: 28 }, { x: 'Wed', y: 22 }, { x: 'Thu', y: 31 }, { x: 'Fri', y: 26 }, { x: 'Sat', y: 19 }, { x: 'Sun', y: 23 }]}
