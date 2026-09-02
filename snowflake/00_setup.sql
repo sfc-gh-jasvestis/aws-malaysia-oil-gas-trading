@@ -1,16 +1,13 @@
--- ============================================================================
--- Energy Trading & Risk Management
--- Real-time energy trading analytics for Malaysia's LNG and crude markets — Snowpipe Streaming ingests price feeds, ML.ANOMALY_DETECTION catches limit breaches, and Tasks trigger risk recalculation.
--- ============================================================================
-USE ROLE ACCOUNTADMIN;
-CREATE DATABASE IF NOT EXISTS OIL_GAS_TRADING;
-CREATE WAREHOUSE IF NOT EXISTS OG_TRADING_WH WAREHOUSE_SIZE = 'MEDIUM' AUTO_SUSPEND = 120 AUTO_RESUME = TRUE;
-USE DATABASE OIL_GAS_TRADING;
-CREATE SCHEMA IF NOT EXISTS RAW;
-CREATE SCHEMA IF NOT EXISTS CURATED;
-CREATE SCHEMA IF NOT EXISTS ML;
-CREATE SCHEMA IF NOT EXISTS AI;
-CREATE SCHEMA IF NOT EXISTS SEARCH;
-CREATE SCHEMA IF NOT EXISTS APP;
+-- Generated from generator/demo_specs/aws-malaysia-oil-gas-trading.json
+-- Regenerate with: python3 generator/gen_repo_docs.py aws-malaysia-oil-gas-trading
+-- This is the schema that is actually deployed for MY_OIL_GAS_TRADING.
 
-USE WAREHOUSE OG_TRADING_WH;
+-- MY_OIL_GAS_TRADING  (Energy Trading & Risk Management)
+-- generated from generator/demo_specs/aws-malaysia-oil-gas-trading.json - do not hand-edit
+CREATE DATABASE IF NOT EXISTS MY_OIL_GAS_TRADING;
+CREATE SCHEMA IF NOT EXISTS MY_OIL_GAS_TRADING.RAW;
+CREATE SCHEMA IF NOT EXISTS MY_OIL_GAS_TRADING.CURATED;
+CREATE SCHEMA IF NOT EXISTS MY_OIL_GAS_TRADING.APP;
+USE DATABASE MY_OIL_GAS_TRADING;
+
+-- 5 real regions; entity names carry their region so the two always agree
