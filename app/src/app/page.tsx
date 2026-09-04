@@ -53,6 +53,7 @@ export default function HomePage() {
         <div className="lg:col-span-1">
           <GeoMap
             country="malaysia"
+            labels={{ entity: 'Counterparties', event: 'Price Ticks', alert: 'Limit Breaches' }}
             regions={data?.regions}
             markers={[{"label": "Kuala Lumpur", "value": "PETRONAS Tower HQ", "color": "blue", "size": "lg"}, {"label": "Johor Bahru", "value": "Refinery: 242K bpd", "color": "green", "size": "lg"}, {"label": "Kota Kinabalu", "value": "Deepwater ops", "color": "green", "size": "md"}, {"label": "Kuching", "value": "Sarawak gas", "color": "green", "size": "md"}]}
             routes={[]}
@@ -83,8 +84,13 @@ export default function HomePage() {
         columns={[
           { key: 'id', header: '#' },
           { key: 'name', header: 'Counterparty' },
+          { key: 'region', header: 'Region' },
           { key: 'status', header: 'Status' },
-          { key: 'value', header: 'Value (RM M)' },
+          { key: 'm1', header: 'Value (RM M)' },
+          { key: 'm2', header: 'Tapis Premium' },
+          { key: 'm3', header: 'Storage Contango' },
+          { key: 'events', header: 'Price Ticks' },
+          { key: 'alerts', header: 'Limit Breaches' },
         ]}
         data={data?.entities || []}
         title="Active Trades"
